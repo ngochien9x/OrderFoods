@@ -1,5 +1,6 @@
 package com.android.nngochien.orderfoods;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp = (Button)findViewById(R.id.btnSignUp);
         txtSlogan = (TextView)findViewById(R.id.txtSlogan);
 
-        /*Typeface face = Typeface.createFromAsset(getAssets(), "fonts/NABILA.TFF");
-        txtSlogan.setTypeface(face);*/
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/NABILA.TTF");
+        txtSlogan.setTypeface(face);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent signIn = new Intent(MainActivity.this, SignInController.class);
+                startActivity(signIn);
             }
         });
     }
